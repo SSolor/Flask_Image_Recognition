@@ -24,3 +24,4 @@ def predict_result(predict):
     '''calls the model to predict'''
     pred = model.predict(predict)
     return np.argmax(pred[0], axis=-1)
+    
