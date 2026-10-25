@@ -26,7 +26,8 @@ def predict_image_file():
 
         return render_template("result.html", err="Invalid request method.")
 
-    except:
+    except Exception as e: # pylint: disable=broad-exception-caught
+        print(e)
         error = "File cannot be processed."
         return render_template("result.html", err=error)
 
@@ -34,4 +35,3 @@ def predict_image_file():
 # Driver code
 if __name__ == "__main__":
     app.run(port=9000, debug=True)
-    
